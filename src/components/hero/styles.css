@@ -1,0 +1,85 @@
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: rgba(255, 255, 255, 0.0); /* Semi-transparent white */
+  color: rgba(255, 255, 255, 0.0); /* Transparent text color */
+  border: 1px solid rgba(255, 255, 255, 0.0); /* Slightly more opaque border */
+  padding: 10px;
+  border-radius: 50%; /* Makes the button circular */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 40px;
+  height: 40px; /* Make buttons circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute; /* Position absolutely to align */
+}
+
+.swiper-button-prev::before,
+.swiper-button-next::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent;
+}
+
+.swiper-button-prev::before {
+  border-right-color: rgba(255, 255, 255, 0.4); /* Arrow color */
+  border-width: 20px 25px 20px 0; /* Create the left arrow */
+  backdrop-filter: blur(10px); /* Glassy effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+}
+
+.swiper-button-next::before {
+  border-left-color: rgba(255, 255, 255, 0.4); /* Arrow color */
+  border-width: 20px 0 20px 25px; /* Create the right arrow */
+  backdrop-filter: blur(10px); /* Glassy effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+}
+
+.swiper-button-prev {
+  left: 190px;
+}
+
+.swiper-button-next {
+  right: 190px;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+@media (max-width: 768px) {
+  .text-start {
+    text-align: center; /* Center text on smaller screens */
+  }
+
+  .swiper-slide-image {
+    width: 100%; /* Ensure image scales properly */
+    height: auto;
+  }
+
+  .slide-content {
+    position: static; /* Remove absolute positioning */
+    padding: 1rem; /* Add padding for better spacing */
+    text-align: center;
+    width: 100%; /* Full width */
+  }
+
+  .slide-content h1 {
+    font-size: 2rem; /* Smaller font size for mobile */
+  }
+
+  .slide-content p {
+    font-size: 1.25rem; /* Smaller font size for mobile */
+    max-width: none; /* Remove max-width restriction */
+  }
+
+  .slide-content button {
+    width: 100%; /* Full width button */
+    padding: 1rem; /* Larger padding for better touch target */
+  }
+}
