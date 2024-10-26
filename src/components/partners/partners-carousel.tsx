@@ -150,6 +150,7 @@ const PartnersCarousel = () => {
         }}
         gradient={true}
         gradientColor={theme.primaryColor}
+        gradientWidth={50}
         autoFill={true}
         loop={0}
         speed={20}
@@ -186,6 +187,7 @@ const PartnersCarousel = () => {
         }}
         gradient={true}
         gradientColor={theme.primaryColor}
+        gradientWidth={50}
         autoFill={true}
         loop={0}
         speed={30}

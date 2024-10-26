@@ -21,17 +21,21 @@ import creative14 from '@/../public/assets/creatives/endod aug 29 FILE 2.jpg'
 import creative15 from '@/../public/assets/creatives/endod aug file 2.jpg'
 import creative16 from '@/../public/assets/creatives/endod july 18.jpg'
 import creative17 from '@/../public/assets/creatives/endod july 31 file 2.jpg'
+import { usePathname } from 'next/navigation';
 
 const ProjectsPage = () => {
   const { theme, themeIndex, setThemeIndex } = useContext(ThemeContext);
+  const pathname = usePathname();
 
   // change themeIndex every 4 seconds by adding one and loop from 0-6
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setThemeIndex((themeIndex + 1) % 7);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [themeIndex]);
+  // useEffect(() => {
+  //   if (pathname === '/projects') {
+  //     const interval = setInterval(() => {
+  //       setThemeIndex((themeIndex + 1) % 7);
+  //     }, 4000);
+  //     return () => clearInterval(interval);
+  //   }
+  // }, [themeIndex]);
 
   const gallery = [
     creative1,
@@ -86,19 +90,19 @@ const ProjectsPage = () => {
           {gallery.map((image, index) => (
             <motion.div
               key={index}
-              className="relative mb-4 break-inside-avoid overflow-hidden"
+              className="relative mb-4 overflow-hidden"
               whileHover={{ scale: 1.05 }} // Animation on hover
               transition={{ duration: 0.3 }}
             >
               <Image
                 src={image}
                 alt={`Project Image ${index + 1}`}
-                layout="responsive"
+                // layout="responsive"
                 className="rounded-lg object-cover w-full h-full"
                 placeholder="blur"
               />
               {/* Overlay Effect */}
-              <motion.div
+              {/* <motion.div
                 className="absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center"
                 transition={{ duration: 0.3 }}
               >
@@ -109,7 +113,7 @@ const ProjectsPage = () => {
                 >
                   View Project
                 </motion.p>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
           ))}
         </div>

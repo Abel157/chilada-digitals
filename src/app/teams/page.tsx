@@ -3,16 +3,20 @@ import { ThemeContext } from '@/lib/ThemeContext';
 import React, { useContext, useEffect } from 'react'
 import teamMember from '@/../public/assets/cute-smiling-young-man-with-bristle-looking-satisfied 2.png';
 import TeamMainCard from '@/components/team/team-main-card';
+import { usePathname } from 'next/navigation';
 const Page = () => {
   const { theme, themeIndex, setThemeIndex } = useContext(ThemeContext);
+  const pathname = usePathname();
 
   // change themeIndex every 4 seconds by adding one and loop from 0-6
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setThemeIndex((themeIndex + 1) % 7);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [themeIndex]);
+  // useEffect(() => {
+  //   if (pathname === '/teams') {
+  //     const interval = setInterval(() => {
+  //       setThemeIndex((themeIndex + 1) % 7);
+  //     }, 4000);
+  //     return () => clearInterval(interval);
+  //   }
+  // }, [themeIndex]);
 
   const teamMembers = [
     {
@@ -73,7 +77,7 @@ const Page = () => {
       <h1 className="text-5xl font-bold mb-12">Meet Our Team</h1>
 
       <p
-        className='text-center text-lg max-w-2xl mb-12'
+        className='text-center text-lg max-w-2xl mb-12 mx-2'
       >
         Our team is made up of passionate individuals who are dedicated to helping you achieve your goals. We are committed to providing you with the best possible service and ensuring your satisfaction.
       </p>

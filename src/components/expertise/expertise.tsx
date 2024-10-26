@@ -131,7 +131,7 @@ const Expertise = () => {
             style={{
               color: theme.secondaryColor,
             }}
-            className='text-xl font-semibold'
+            className='text-xl font-semibold text-center'
           >
             Social Media Marketing
           </p>
@@ -151,7 +151,7 @@ const Expertise = () => {
             style={{
               color: theme.secondaryColor,
             }}
-            className='text-xl font-semibold'
+            className='text-xl font-semibold text-center'
           >
             Video Production
           </p>
@@ -172,7 +172,7 @@ const Expertise = () => {
             style={{
               color: theme.secondaryColor,
             }}
-            className='text-xl font-semibold'
+            className='text-xl font-semibold text-center'
           >
             Branding
           </p>
@@ -193,7 +193,7 @@ const Expertise = () => {
             style={{
               color: theme.secondaryColor,
             }}
-            className='text-xl font-semibold'
+            className='text-xl font-semibold text-center'
           >
             SEO
           </p>
@@ -214,7 +214,7 @@ const Expertise = () => {
             style={{
               color: theme.secondaryColor,
             }}
-            className='text-xl font-semibold'
+            className='text-xl font-semibold text-center'
           >
             Digital Marketing
           </p>
@@ -235,7 +235,7 @@ const Expertise = () => {
             style={{
               color: theme.secondaryColor,
             }}
-            className='text-xl font-semibold'
+            className='text-xl font-semibold text-center'
           >
             Web Design And Development
           </p>

@@ -5,17 +5,21 @@ import Image from 'next/image';
 import teamMember from '@/../public/assets/cute-smiling-young-man-with-bristle-looking-satisfied 2.png';
 import Team from '@/components/team/team';
 import PartnersCarousel from '@/components/partners/partners-carousel';
+import { usePathname } from 'next/navigation';
 
 const AboutUsPage = () => {
   const { theme, themeIndex, setThemeIndex } = useContext(ThemeContext);
+  const pathname = usePathname();
 
   // change themeIndex every 4 seconds by adding one and loop from 0-6
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setThemeIndex((themeIndex + 1) % 7);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [themeIndex]);
+  // useEffect(() => {
+  //   if (pathname === '/aboutus') {
+  //     const interval = setInterval(() => {
+  //       setThemeIndex((themeIndex + 1) % 7);
+  //     }, 4000);
+  //     return () => clearInterval(interval);
+  //   }
+  // }, [themeIndex]);
 
   return (
     <div style={{ backgroundColor: theme.primaryColor }} className="flex flex-col items-center pb-32">

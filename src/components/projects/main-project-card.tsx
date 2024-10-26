@@ -1,11 +1,21 @@
-import React, { useContext } from 'react'
+import React, { FC, useContext } from 'react'
 import { CardBody, CardContainer, CardItem } from '../ui/3d-card'
 import Image from 'next/image'
-import projectImage from '@/../public/assets/heroMobile/M22.jpg'
 import { ArrowRightIcon } from 'lucide-react'
 import { ThemeContext } from '@/lib/ThemeContext'
 
-const MainProjectCard = () => {
+interface MainProjectCardProps {
+  projectTitle: string;
+  projectDescription: string;
+  projectImage: any;
+}
+
+const MainProjectCard: FC<MainProjectCardProps> = (props) => {
+  const {
+    projectTitle,
+    projectDescription,
+    projectImage
+  } = props
   const { theme } = useContext(ThemeContext)
   return (
     <CardContainer
@@ -18,7 +28,7 @@ const MainProjectCard = () => {
           translateZ={60}
         >
           <div
-            className='w-[200px] h-[300px] bg-white rounded-3xl overflow-hidden'
+            className='w-[200px] h-[300px] bg-white rounded-3xl overflow-hidden flex items-center justify-center'
           >
             <Image
               src={projectImage}
@@ -36,11 +46,9 @@ const MainProjectCard = () => {
               style={{
                 color: theme.secondaryColor
               }}
-              className='text-2xl font-bold'>Project Title</h2>
+              className='text-2xl font-bold'>{projectTitle}</h2>
             <p className='text-base text-white max-w-[243px]'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              bibendum, est nec lacinia ultrices, libero nunc varius odio, nec
-              tincidunt augue turpis eu nunc.
+              {projectDescription}
             </p>
           </div>
           <button

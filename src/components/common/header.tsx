@@ -91,26 +91,6 @@ const Header = () => {
             Home
           </Link>
           <Link
-            href="/aboutus"
-            style={{
-              color: theme.secondaryColor,
-              transition: 'color 0.5s ease',
-            }}
-            className="text-base font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
-          >
-            About Us
-          </Link>
-          <Link
-            href="/projects"
-            style={{
-              color: theme.secondaryColor,
-              transition: 'color 0.5s ease',
-            }}
-            className="text-base font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
-          >
-            Projects
-          </Link>
-          <Link
             href="/services"
             style={{
               color: theme.secondaryColor,
@@ -129,6 +109,26 @@ const Header = () => {
             className="text-base font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
           >
             Team
+          </Link>
+          <Link
+            href="/aboutus"
+            style={{
+              color: theme.secondaryColor,
+              transition: 'color 0.5s ease',
+            }}
+            className="text-base font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
+          >
+            About Us
+          </Link>
+          <Link
+            href="/projects"
+            style={{
+              color: theme.secondaryColor,
+              transition: 'color 0.5s ease',
+            }}
+            className="text-base font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
+          >
+            Projects
           </Link>
         </nav>
 
@@ -163,68 +163,65 @@ const Header = () => {
       {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
         <div
-          style={{
-            backgroundColor: 'rgba(255, 255, 255, 0.3)',
-            backdropFilter: 'blur(10px)',
-          }}
-          className="flex flex-col gap-y-4 items-center md:hidden absolute top-16 left-0 right-0 rounded-3xl p-4 transition-all duration-300 ease-in-out"
+          className="md:hidden absolute top-16 left-0 right-0 rounded-3xl bg-none transition-all duration-300 ease-in-out"
         >
-          <Link
-            href="/"
+          <div
             style={{
-              color: theme.secondaryColor,
-              transition: 'color 0.5s ease',
+              backgroundColor: 'rgba(255, 255, 255, 0.3)',
             }}
-            className="text-base font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
+            className="fixed w-full backdrop-blur-3xl flex flex-col gap-y-4 items-center rounded-3xl p-4"
           >
-            Home
-          </Link>
-          <Link
-            href="/"
-            style={{
-              color: theme.secondaryColor,
-              transition: 'color 0.5s ease',
-            }}
-            className="text-base font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
-          >
-            Projects
-          </Link>
-          <Link
-            href="/"
-            style={{
-              color: theme.secondaryColor,
-              transition: 'color 0.5s ease',
-            }}
-            className="text-base font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
-          >
-            Services
-          </Link>
-          <Link
-            href="/"
-            style={{
-              color: theme.secondaryColor,
-              transition: 'color 0.5s ease',
-            }}
-            className="text-base font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
-          >
-            Team
-          </Link>
-          <button
-            style={{
-              color: theme.secondaryColor,
-              transition: 'color 0.5s ease',
-            }}
-            className="p-2 hover:text-yellow-500 transition-all duration-150">
-            <MdEmail size={24} />
-          </button>
-          <button
-            style={{
-              color: theme.secondaryColor,
-              transition: 'color 0.5s ease',
-            }}
-            className="p-2 hover:text-yellow-500 transition-all duration-150">
-            <PhoneCall size={24} />
-          </button>
+            <Link
+              href="/"
+              style={{
+                color: theme.secondaryColor,
+                transition: 'color 0.5s ease',
+              }}
+              className="text-base font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
+            >
+              Home
+            </Link>
+            <Link
+              href="/aboutus"
+              style={{
+                color: theme.secondaryColor,
+                transition: 'color 0.5s ease',
+              }}
+              className="text-base font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
+            >
+              About Us
+            </Link>
+            <Link
+              href="/projects"
+              style={{
+                color: theme.secondaryColor,
+                transition: 'color 0.5s ease',
+              }}
+              className="text-base font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
+            >
+              Projects
+            </Link>
+            <Link
+              href="/services"
+              style={{
+                color: theme.secondaryColor,
+                transition: 'color 0.5s ease',
+              }}
+              className="text-base font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
+            >
+              Services
+            </Link>
+            <Link
+              href="/teams"
+              style={{
+                color: theme.secondaryColor,
+                transition: 'color 0.5s ease',
+              }}
+              className="text-base font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
+            >
+              Team
+            </Link>
+          </div>
         </div>
       )}
     </header>

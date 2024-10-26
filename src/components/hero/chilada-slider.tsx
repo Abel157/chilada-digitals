@@ -108,7 +108,8 @@ const ChiladaSlider: FC = () => {
       slidesPerView={1}
       modules={[Navigation, Autoplay]}
       normalizeSlideIndex={true}
-      onSlideChange={(swiper) => setThemeIndex(swiper.realIndex ? swiper.realIndex : 0)}
+      // onSlideChange={(swiper) => setThemeIndex(swiper.realIndex ? swiper.realIndex : 0)}
+      onAutoplayTimeLeft={(swiper) => setThemeIndex(swiper.realIndex ? swiper.realIndex : 0)}
     >
       {slides.map((slide, index) => (
         <SwiperSlide key={index}>

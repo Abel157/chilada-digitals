@@ -5,6 +5,7 @@ import { ThemeContext } from "@/lib/ThemeContext";
 import { Theme } from "@/lib/types";
 import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
+import FloatingSocials from '@/components/common/FloatingSocials';
 
 export default function RootLayout({
   children,
@@ -63,23 +64,11 @@ export default function RootLayout({
       <html lang="en">
         <body
           style={{
-            background: `${themes[themeIndex].primaryColor}`,
+            background: themes[themeIndex].primaryColor,
             backgroundBlendMode: "overlay",
             transition: "background-color 1.5s ease",
           }}
         >
-          {/* <div
-            style={{
-              backgroundColor: themes[themeIndex].primaryColor,
-              opacity: 1,
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              zIndex: -1,
-            }}
-          /> */}
           <div
             style={{
               backgroundImage: "url('/assets/chiladapic.jpg')",
@@ -98,6 +87,7 @@ export default function RootLayout({
           />
           <Header />
           {children}
+          <FloatingSocials /> {/* Add the component here */}
           <Footer />
         </body>
       </html>

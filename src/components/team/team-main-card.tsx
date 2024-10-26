@@ -14,7 +14,7 @@ const TeamMainCard: FC<TeamMainCardProps> = ({ name, position, description, imgU
   const { theme, themeIndex } = useContext(ThemeContext);
 
   return (
-    <div className={`group overflow-hidden h-[27rem] rounded-lg shadow-lg transition-all duration-500 hover:shadow-xl max-w-72`}>
+    <div className={`group overflow-hidden h-[27rem] rounded-lg shadow-lg transition-all duration-500 hover:shadow-xl max-w-72 self-center justify-self-center`}>
       {/* Team Member Image */}
       <div className="relative w-full h-72 overflow-hidden">
         <Image 

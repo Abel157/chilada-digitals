@@ -43,9 +43,9 @@ const SliderCard: FC<SliderCardProps> = ({ slide }) => {
         alignItems: 'center',
         height: '100%',
         width: '100vw',
-        background: theme.primaryColor,
         transition: "background-color 0.5s ease",
       }}
+      className='pt-14 md:pt-0 px-2 md:px-0'
     >
       <div
         style={{
@@ -59,11 +59,11 @@ const SliderCard: FC<SliderCardProps> = ({ slide }) => {
       >
         <div
           style={{
-            height: '93vh',
             width: '100%',
             overflow: 'hidden',
             objectFit: 'contain',
           }}
+          className='h-auto md:h-[93vh]'
         >
           <Image
             src={slide.image}
@@ -78,7 +78,6 @@ const SliderCard: FC<SliderCardProps> = ({ slide }) => {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          exit={{ opacity: 0, x: -50 }}
           className='slide-content absolute top-1/4 right-80 transform -translate-y-1/2 flex flex-col md:items-start justify-center gap-y-4  max-w-[32rem]'
         >
           <h1

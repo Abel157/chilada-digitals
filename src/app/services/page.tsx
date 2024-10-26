@@ -1,20 +1,24 @@
 'use client'
 
-import React, { useContext, useEffect } from 'react';
+import React, { use, useContext, useEffect } from 'react';
 import { ThemeContext } from '@/lib/ThemeContext';
 import { Code, Search, Brush, Edit3, Video } from 'lucide-react'; // Example icons from 'lucide-react', you can customize icons as needed
 import { BsInstagram } from 'react-icons/bs';
+import { usePathname } from 'next/navigation';
 
 const ServicesPage = () => {
   const { theme, themeIndex, setThemeIndex } = useContext(ThemeContext);
+  const pathname = usePathname();
 
   // change themeIndex every 4 seconds by adding one and loop from 0-6
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setThemeIndex((themeIndex + 1) % 7);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [themeIndex]);
+  // useEffect(() => {
+  //   if (pathname === '/services') {
+  //     const interval = setInterval(() => {
+  //       setThemeIndex((themeIndex + 1) % 7);
+  //     }, 4000);
+  //     return () => clearInterval(interval);
+  //   }
+  // }, [themeIndex]);
 
   const services = [
     {
@@ -57,7 +61,7 @@ const ServicesPage = () => {
       <h1 className="text-5xl font-bold mb-12">Our Services</h1>
 
       <p
-        className='text-center text-lg max-w-2xl mb-12'
+        className='text-center text-lg max-w-2xl mb-12 mx-2'
       >
         We provide a range of services to help you grow your business and reach your goals.
       </p>
