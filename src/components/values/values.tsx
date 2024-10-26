@@ -6,16 +6,6 @@ const Values = () => {
   const { theme } = useContext(ThemeContext)
   return (
     <div className='flex flex-col'>
-      <h2
-        style={{
-          color: theme.secondaryColor,
-          textAlign: 'center',
-          margin: '2rem 0'
-        }}
-        className='text-3xl md:text-6xl font-bold'
-      >
-        Values
-      </h2>
       <div className='max-w-screen-lg mx-auto'>
         <HoverEffect className='' items={projects} />
       </div>

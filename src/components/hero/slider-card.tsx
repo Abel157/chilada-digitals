@@ -42,29 +42,36 @@ const SliderCard: FC<SliderCardProps> = ({ slide }) => {
         justifyContent: 'center',
         alignItems: 'center',
         height: '100%',
-        width: '100%',
+        width: '100vw',
         background: theme.primaryColor,
         transition: "background-color 0.5s ease",
-        padding: '0 1rem',
       }}
     >
       <div
         style={{
           display: 'flex',
+          width: '100%',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
           position: 'relative',
         }}
       >
-        <Image
-          src={slide.image}
-          alt={slide.title}
-          className='swiper-slide-image max-w-screen-lg'
-          layout="responsive"
-          width={1200}
-          height={800}
-        />
+        <div
+          style={{
+            height: '93vh',
+            width: '100%',
+            overflow: 'hidden',
+            objectFit: 'contain',
+          }}
+        >
+          <Image
+            src={slide.image}
+            alt={slide.title}
+            className='swiper-slide-image w-[110%] h-auto'
+            layout="responsive"
+          />
+        </div>
         {/* Text on top of the image */}
         <motion.div
           key={themeIndex}
@@ -72,14 +79,14 @@ const SliderCard: FC<SliderCardProps> = ({ slide }) => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
           exit={{ opacity: 0, x: -50 }}
-          className='slide-content absolute top-1/3 right-16 transform -translate-y-1/2 flex flex-col md:items-start justify-center gap-y-4'
+          className='slide-content absolute top-1/4 right-80 transform -translate-y-1/2 flex flex-col md:items-start justify-center gap-y-4  max-w-[32rem]'
         >
           <h1
             style={{
               color: theme.secondaryColor,
               lineHeight: '1',
             }}
-            className='text-[80px] font-extrabold text-center md:text-start'
+            className='text-[50px] font-bold text-center md:text-start'
           >
             {slide.header}
           </h1>
@@ -87,7 +94,7 @@ const SliderCard: FC<SliderCardProps> = ({ slide }) => {
             style={{
               color: 'white',
             }}
-            className='text-2xl font-bold max-w-[26rem]'
+            className='text-xl font-semibold'
           >
             {slide.text}
           </p>

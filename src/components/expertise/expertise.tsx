@@ -3,7 +3,6 @@ import { ArrowRightIcon } from 'lucide-react'
 import React, { useContext } from 'react'
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
-import { CardSpotlight } from '../ui/card-spotlight';
 
 const Expertise = () => {
   const { theme } = useContext(ThemeContext)
@@ -11,7 +10,7 @@ const Expertise = () => {
 
   return (
     <div
-      className='bg-white bg-opacity-10 flex flex-col md:flex-row items-center justify-center my-12 py-12 gap-12 px-6'
+      className='bg-white bg-opacity-10 backdrop-blur-2xl flex flex-col md:flex-row items-center justify-center my-12 py-12 gap-12 px-6'
     >
       <div
         className='flex flex-col items-start justify-center gap-y-4 md:gap-y-6'
@@ -116,16 +115,17 @@ const Expertise = () => {
           rowGap: '1.5rem',
         }}
       >
-        <CardSpotlight
+        <div
           style={{
             backgroundColor: 'rgba(0, 0, 0, 0.3)',
             backdropFilter: 'blur(10px)',
             border: `1px solid ${theme.secondaryColor}`,
             cursor: 'pointer',
             gridColumn: 'span 2',
+            borderRadius: '0.7rem',
           }}
           color={theme.primaryColor}
-          className='py-4 px-10 mx-auto flex items-center justify-center'
+          className='py-4 px-10 mx-auto flex items-center justify-center hover:scale-105 transition-transform duration-300'
         >
           <p
             style={{
@@ -135,16 +135,17 @@ const Expertise = () => {
           >
             Social Media Marketing
           </p>
-        </CardSpotlight>
-        <CardSpotlight
+        </div>
+        <div
           style={{
             backgroundColor: 'rgba(0, 0, 0, 0.3)',
             backdropFilter: 'blur(10px)',
             border: `1px solid ${theme.secondaryColor}`,
             cursor: 'pointer',
+            borderRadius: '0.7rem',
           }}
           color={theme.primaryColor}
-          className='py-4 px-10 mx-auto  flex items-center justify-center'
+          className='py-4 px-10 mx-auto flex items-center justify-center hover:scale-105 transition-transform duration-300'
         >
           <p
             style={{
@@ -154,17 +155,18 @@ const Expertise = () => {
           >
             Video Production
           </p>
-        </CardSpotlight>
-        <CardSpotlight
+        </div>
+        <div
           style={{
             backgroundColor: 'rgba(0, 0, 0, 0.3)',
             backdropFilter: 'blur(10px)',
             border: `1px solid ${theme.secondaryColor}`,
             cursor: 'pointer',
             gridColumn: 'span 1',
+            borderRadius: '0.7rem',
           }}
           color={theme.primaryColor}
-          className='py-4 px-10 mx-auto  flex items-center justify-center'
+          className='py-4 px-10 mx-auto flex items-center justify-center hover:scale-105 transition-transform duration-300'
         >
           <p
             style={{
@@ -174,17 +176,18 @@ const Expertise = () => {
           >
             Branding
           </p>
-        </CardSpotlight>
-        <CardSpotlight
+        </div>
+        <div
           style={{
             backgroundColor: 'rgba(0, 0, 0, 0.3)',
             backdropFilter: 'blur(10px)',
             border: `1px solid ${theme.secondaryColor}`,
             cursor: 'pointer',
             gridColumn: 'span 1',
+            borderRadius: '0.7rem',
           }}
           color={theme.primaryColor}
-          className='py-4 px-10 mx-auto  flex items-center justify-center'
+          className='py-4 px-10 mx-auto flex items-center justify-center hover:scale-105 transition-transform duration-300'
         >
           <p
             style={{
@@ -194,17 +197,18 @@ const Expertise = () => {
           >
             SEO
           </p>
-        </CardSpotlight>
-        <CardSpotlight
+        </div>
+        <div
           style={{
             backgroundColor: 'rgba(0, 0, 0, 0.3)',
             backdropFilter: 'blur(10px)',
             border: `1px solid ${theme.secondaryColor}`,
             cursor: 'pointer',
             gridColumn: 'span 1',
+            borderRadius: '0.7rem',
           }}
           color={theme.primaryColor}
-          className='py-4 px-10 mx-auto  flex items-center justify-center'
+          className='py-4 px-10 mx-auto flex items-center justify-center hover:scale-105 transition-transform duration-300'
         >
           <p
             style={{
@@ -214,17 +218,18 @@ const Expertise = () => {
           >
             Digital Marketing
           </p>
-        </CardSpotlight>
-        <CardSpotlight
+        </div>
+        <div
           style={{
             backgroundColor: 'rgba(0, 0, 0, 0.3)',
             backdropFilter: 'blur(10px)',
             border: `1px solid ${theme.secondaryColor}`,
             cursor: 'pointer',
             gridColumn: 'span 2',
+            borderRadius: '0.7rem',
           }}
           color={theme.primaryColor}
-          className='py-4 px-10 mx-auto  flex items-center justify-center'
+          className='py-4 px-10 mx-auto flex items-center justify-center hover:scale-105 transition-transform duration-300'
         >
           <p
             style={{
@@ -234,7 +239,7 @@ const Expertise = () => {
           >
             Web Design And Development
           </p>
-        </CardSpotlight>
+        </div>
       </div>
     </div>
   )

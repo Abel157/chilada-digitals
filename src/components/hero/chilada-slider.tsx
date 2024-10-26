@@ -43,38 +43,38 @@ const ChiladaSlider: FC = () => {
     {
       image: image2,
       responsive: responsive2,
-      header: 'Aim High!',
-      text: 'Growth is unending. Higher aims always shows',
+      header: 'Digital Media Maestro',
+      text: 'Craft your symphony of Digital impact',
     },
     {
       image: image3,
       responsive: responsive3,
-      header: 'Aim High!',
-      text: 'Growth is unending. Higher aims always shows',
+      header: 'Social Media Management',
+      text: 'Just as the harmony of a Masinko captivates hearts, Chilada\'s',
     },
     {
       image: image4,
       responsive: responsive4,
-      header: 'Aim High!',
-      text: 'Growth is unending. Higher aims always shows',
+      header: 'Much like Kirar string, Chilada\'s',
+      text: 'Rowess strikes the right chords across advertising platforms, guided by meticulous research and strategy, composing a soulful rhythm of impactful results.',
     },
     {
       image: image5,
       responsive: responsive5,
-      header: 'Aim High!',
-      text: 'Growth is unending. Higher aims always shows',
+      header: 'Platforms For Advertisement',
+      text: 'Much like Harmonic voice, Chilada’s',
     },
     {
       image: image6,
       responsive: responsive6,
-      header: 'Aim High!',
-      text: 'Growth is unending. Higher aims always shows',
+      header: 'Content Marketing',
+      text: 'Much like the unforgettable boom of kebero, Chilada’s',
     },
     {
       image: image7,
       responsive: responsive7,
-      header: 'Aim High!',
-      text: 'Growth is unending. Higher aims always shows',
+      header: 'Influencer Marketing',
+      text: 'Reverberating across digital platforms, we specialize in curating the perfect ensemble of influencers to amplify your brand\'s voice, just as a washint harmonizes with the rhythm of a composition.',
     },
   ]
 
@@ -94,37 +94,35 @@ const ChiladaSlider: FC = () => {
   }, []);
 
   return (
-    <>
-      <Swiper
-        navigation={{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        }}
-        className="mySwiper"
-        loop={true}
-        autoplay={{
-          delay: 4000,
-          disableOnInteraction: false,
-        }}
-        slidesPerView={1}
-        modules={[Navigation, Autoplay]}
-        normalizeSlideIndex={true}
-        onSlideChange={(swiper) => setThemeIndex(swiper.realIndex ? swiper.realIndex : 0)}
-      >
-        {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <SliderCard slide={slide} />
-          </SwiperSlide>
-        ))}
+    <Swiper
+      navigation={{
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }}
+      className="mySwiper"
+      loop={true}
+      autoplay={{
+        delay: 4000,
+        disableOnInteraction: false,
+      }}
+      slidesPerView={1}
+      modules={[Navigation, Autoplay]}
+      normalizeSlideIndex={true}
+      onSlideChange={(swiper) => setThemeIndex(swiper.realIndex ? swiper.realIndex : 0)}
+    >
+      {slides.map((slide, index) => (
+        <SwiperSlide key={index}>
+          <SliderCard slide={slide} />
+        </SwiperSlide>
+      ))}
 
-        {!isSmallScreen ? (
-          <>
-            <button className="swiper-button-prev"></button>
-            <button className="swiper-button-next"></button>
-          </>
-        ) : null}
-      </Swiper>
-    </>
+      {!isSmallScreen ? (
+        <>
+          <button className="swiper-button-prev"></button>
+          <button className="swiper-button-next"></button>
+        </>
+      ) : null}
+    </Swiper>
   )
 }
 

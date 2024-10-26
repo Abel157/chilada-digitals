@@ -29,7 +29,7 @@ export const HoverEffect = ({
         <motion.div
           ref={ref}
           key={idx}
-          className="relative h-full w-full"
+          className="relative h-full w-full backdrop-blur-md"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.3, delay: idx * 0.1 }}

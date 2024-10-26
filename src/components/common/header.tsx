@@ -55,7 +55,7 @@ const Header = () => {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 transition-all ease-in-out"
+      className="fixed top-0 left-0 right-0 z-[90] transition-all ease-in-out"
       style={{
         width: headerWidth,
         maxWidth: '100%',
@@ -86,43 +86,53 @@ const Header = () => {
               color: theme.secondaryColor,
               transition: 'color 0.5s ease',
             }}
-            className="text-lg font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
+            className="text-base font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
           >
             Home
           </Link>
           <Link
-            href="/"
+            href="/aboutus"
             style={{
               color: theme.secondaryColor,
               transition: 'color 0.5s ease',
             }}
-            className="text-lg font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
+            className="text-base font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
+          >
+            About Us
+          </Link>
+          <Link
+            href="/projects"
+            style={{
+              color: theme.secondaryColor,
+              transition: 'color 0.5s ease',
+            }}
+            className="text-base font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
           >
             Projects
           </Link>
           <Link
-            href="/"
+            href="/services"
             style={{
               color: theme.secondaryColor,
               transition: 'color 0.5s ease',
             }}
-            className="text-lg font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
+            className="text-base font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
           >
             Services
           </Link>
           <Link
-            href="/"
+            href="/teams"
             style={{
               color: theme.secondaryColor,
               transition: 'color 0.5s ease',
             }}
-            className="text-lg font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
+            className="text-base font-base hover:underline transition-all duration-300 ease-in-out hover:saturate-200"
           >
             Team
           </Link>
         </nav>
 
-        {/* Right - Icons or Buttons */}
+        {/* Right - Icons or Buttons
         <div
           style={{
             color: theme.secondaryColor,
@@ -135,7 +145,7 @@ const Header = () => {
           <button className="p-2 hover:text-yellow-500 transition-all duration-150">
             <PhoneCall size={24} />
           </button>
-        </div>
+        </div> */}
 
         {/* Burger Menu for mobile */}
         <div className="md:hidden"

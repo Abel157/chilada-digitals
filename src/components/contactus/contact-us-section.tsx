@@ -6,7 +6,7 @@ import { motion, useInView } from 'framer-motion';
 const ContactUs = () => {
   const { theme } = useContext(ThemeContext);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true }); // Animation triggers only once when it comes into view
+  const isInView = useInView(ref, { once: true });
 
   return (
     <motion.div
@@ -14,114 +14,139 @@ const ContactUs = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5 }}
-      className='max-w-6xl mx-auto w-10/12 bg-white bg-opacity-30 my-20 rounded-xl p-4 md:p-10 flex flex-col md:flex-row gap-y-4'
+      className="max-w-6xl mx-auto w-11/12 bg-white bg-opacity-5 my-20 rounded-lg p-6 md:p-16 flex flex-col md:flex-row gap-12 backdrop-blur-xl"
     >
+      {/* Left Section */}
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 50 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.8 }}
-        className='w-full flex flex-col justify-between gap-y-4'>
-        <div className='flex flex-col gap-y-8'>
-          <h3 className='font-semibold text-white text-4xl font-heading leading-tight max-w-80'>
-            Let’s discuss on something
-            <span style={{
-              color: theme.secondaryColor,
-            }}> cool </span>
-            together
+        className="w-full md:w-1/2 flex flex-col justify-between gap-y-6"
+      >
+        {/* Heading and Info */}
+        <div className="flex flex-col gap-y-6">
+          <h3 className="font-bold text-5xl text-white leading-tight">
+            Let’s discuss something
+            <span style={{ color: theme.secondaryColor }}> cool </span> together!
           </h3>
-          <div
-            style={{
-              color: theme.secondaryColor,
-            }}
-            className='flex flex-col gap-y-4 max-w-sm'>
-            <div className='flex justify-start items-center gap-x-2 cursor-pointer'>
-              <MailIcon /> <span>chilada@gmail.com</span>
-            </div>
+
+          {/* Contact Info */}
+          <div className="flex flex-col gap-y-4 text-lg text-white">
+            {/* Email with underline effect */}
             <div
+              className="flex items-center gap-x-3 cursor-pointer relative group"
+            >
+              <MailIcon size={24} />
+              <span className="group-hover:underline transition-all duration-300">
+                chilada@gmail.com
+              </span>
+            </div>
+
+            {/* Phone with background and text color transition */}
+            <div
+              className="flex items-center gap-x-3 bg-opacity-50 rounded-lg py-3 px-4 transition-all duration-300 cursor-pointer"
               style={{
-                // translucent bg with theme.secondaryColor
-                backgroundColor: `${theme.secondaryColor}50`, // 80 represents 50% opacity
+                backgroundColor: `${theme.secondaryColor}50`,
                 color: 'white',
               }}
-              className={`flex justify-start items-center gap-x-4 rounded-lg py-3 pr-20 pl-2 cursor-pointer`}>
-              <PhoneCallIcon /> <span>+123 456 789</span>
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = theme.secondaryColor;
+                e.currentTarget.style.color = theme.primaryColor;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = `${theme.secondaryColor}50`;
+                e.currentTarget.style.color = 'white';
+              }}
+            >
+              <PhoneCallIcon size={24} />
+              <span>+123 456 789</span>
             </div>
-            <div className='flex justify-start items-center gap-x-4'>
-              <LocateIcon /> <span>123 Street</span>
+
+            {/* Location with translate effect on hover */}
+            <div
+              className="flex items-center gap-x-3 cursor-pointer transition-transform duration-300 transform hover:translate-x-2"
+            >
+              <LocateIcon size={24} />
+              <span>123 Street</span>
             </div>
           </div>
         </div>
-        <div className='self-center'>
-          1
-        </div>
+
       </motion.div>
-      <div
-        className="w-full bg-white bg-opacity-50 rounded-xl p-8 hover:scale-110 transition-all duration-300 hover:z-30"
+
+      {/* Right Section */}
+      <motion.div
+        className="w-full md:w-1/2 bg-white bg-opacity-10 backdrop-blur-xl rounded-lg p-8 shadow-lg transform transition-all hover:scale-105"
+        initial={{ opacity: 0, y: 50 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.8 }}
       >
-        <h2 className="text-xl font-semibold mb-6 text-gray-700">I&apos;m interested in...</h2>
+        <h2 className="text-2xl font-semibold mb-8 text-white">I&apos;m interested in...</h2>
+
         <form className="space-y-6">
+          {/* Name Input */}
           <div className="relative">
             <input
               type="text"
               name="name"
               placeholder="Your Name"
-              className="w-full bg-transparent border-b-2 border-gray-300 outline-none py-2"
+              className="w-full bg-transparent border-b-2 border-gray-300 outline-none py-2 text-lg text-white placeholder-gray-400"
               style={{
                 transition: 'border-color 0.3s ease',
-                borderBottom: '2px solid #ccc', // Default border color
-                width: '100%',
                 padding: '0.5rem',
               }}
-              onFocus={(e) => (e.target.style.borderBottomColor = theme.primaryColor)} // Change border color on focus
-              onBlur={(e) => (e.target.style.borderBottomColor = '#ccc')} // Reset border color on blur
+              onFocus={(e) => (e.target.style.borderBottomColor = theme.primaryColor)}
+              onBlur={(e) => (e.target.style.borderBottomColor = '#ccc')}
             />
           </div>
+
+          {/* Email Input */}
           <div className="relative">
             <input
               type="email"
               name="email"
               placeholder="Your Email"
-              className="w-full bg-transparent border-b-2 border-gray-300 outline-none py-2"
+              className="w-full bg-transparent border-b-2 border-gray-300 outline-none py-2 text-lg text-white placeholder-gray-400"
               style={{
                 transition: 'border-color 0.3s ease',
-                borderBottom: '2px solid #ccc', // Default border color
-                width: '100%',
                 padding: '0.5rem',
               }}
-              onFocus={(e) => (e.target.style.borderBottomColor = theme.primaryColor)} // Change border color on focus
-              onBlur={(e) => (e.target.style.borderBottomColor = '#ccc')} // Reset border color on blur
+              onFocus={(e) => (e.target.style.borderBottomColor = theme.primaryColor)}
+              onBlur={(e) => (e.target.style.borderBottomColor = '#ccc')}
             />
           </div>
+
+          {/* Message Textarea */}
           <div className="relative">
             <textarea
               name="message"
               placeholder="Your Message"
-              rows={12}
-              className="w-full bg-transparent border-b-2 border-gray-300 outline-none py-2"
+              rows={6}
+              className="w-full bg-transparent border-b-2 border-gray-300 outline-none py-2 text-lg text-white placeholder-gray-400"
               style={{
                 transition: 'border-color 0.3s ease',
-                borderBottom: '2px solid #ccc', // Default border color
-                width: '100%',
                 padding: '0.5rem',
               }}
-              onFocus={(e) => (e.target.style.borderBottomColor = theme.primaryColor)} // Change border color on focus
-              onBlur={(e) => (e.target.style.borderBottomColor = '#ccc')} // Reset border color on blur
+              onFocus={(e) => (e.target.style.borderBottomColor = theme.primaryColor)}
+              onBlur={(e) => (e.target.style.borderBottomColor = '#ccc')}
             />
           </div>
+
+          {/* Submit Button */}
           <button
             style={{
               backgroundColor: theme.secondaryColor,
               color: theme.primaryColor
             }}
-            className="px-4 py-2 rounded-lg border hover:-translate-y-1 transform transition duration-200 hover:shadow-md text-base font-semibold"
+            className="px-6 py-3 rounded-lg border border-transparent hover:border-white hover:-translate-y-1 transform transition duration-200 hover:shadow-md text-base font-semibold flex items-center gap-2 justify-center"
           >
-            Send Message <ArrowRightIcon size={24} style={{ display: 'inline-block' }} />
+            Send Message <ArrowRightIcon size={24} />
           </button>
         </form>
-      </div>
+      </motion.div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default ContactUs
+export default ContactUs;

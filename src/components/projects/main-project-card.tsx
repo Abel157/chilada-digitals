@@ -9,7 +9,7 @@ const MainProjectCard = () => {
   const { theme } = useContext(ThemeContext)
   return (
     <CardContainer
-      className='inter-var -mt-20'
+      className='inter-var -mt-20 backdrop-blur-md'
     >
       <CardBody
         className='flex gap-4 p-2 items-center relative group/card shadow-md hover:shadow-[#FFFFE0] h-auto w-[505px] bg-black bg-opacity-30 rounded-3xl'

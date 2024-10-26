@@ -18,7 +18,7 @@ export default function Home() {
   } = useContext(ThemeContext)
 
   return (
-    <main className="my-24">
+    <main className="my-14">
       <ChiladaSlider />
       <PartnersCarousel />
       <Expertise />

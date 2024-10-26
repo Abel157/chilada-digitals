@@ -63,10 +63,39 @@ export default function RootLayout({
       <html lang="en">
         <body
           style={{
-            backgroundColor: themes[themeIndex].primaryColor,
-            transition: "background-color 0.5s ease",
+            background: `${themes[themeIndex].primaryColor}`,
+            backgroundBlendMode: "overlay",
+            transition: "background-color 1.5s ease",
           }}
         >
+          {/* <div
+            style={{
+              backgroundColor: themes[themeIndex].primaryColor,
+              opacity: 1,
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              zIndex: -1,
+            }}
+          /> */}
+          <div
+            style={{
+              backgroundImage: "url('/assets/chiladapic.jpg')",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              opacity: 0.1,
+              position: "fixed",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: "100%",
+              height: "100vh",
+              zIndex: 0,
+            }}
+          />
           <Header />
           {children}
           <Footer />
