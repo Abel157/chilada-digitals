@@ -1,7 +1,10 @@
 'use client'
 import { ThemeContext } from '@/lib/ThemeContext';
 import React, { useContext, useEffect } from 'react'
-import teamMember from '@/../public/assets/cute-smiling-young-man-with-bristle-looking-satisfied 2.png';
+import natanim from '@/../public/assets/natanim.jpg';
+import kalkidan from '@/../public/assets/kalkidan.jpg';
+import mule from '@/../public/assets/blank.png';
+import daniel from '@/../public/assets/Daniel.jpg';
 import TeamMainCard from '@/components/team/team-main-card';
 import { usePathname } from 'next/navigation';
 const Page = () => {
@@ -20,53 +23,30 @@ const Page = () => {
 
   const teamMembers = [
     {
-      name: 'John Doe',
-      position: 'CEO',
+      name: 'Mulubrehan Mebratu',
+      position: 'Co-Founder and Director',
+      description: 'Founder and Executive director',
+      imgUrl:mule,
+    },
+    {
+      name: 'Daniel',
+      position: 'Co-Founder and Deputy Director',
       description: 'Leader of our team with 10+ years of experience.',
-      imgUrl: teamMember,
+      imgUrl: daniel,
     },
     {
-      name: 'Jane Smith',
-      position: 'Marketing Head',
+      name: 'Kalkidan',
+      position: 'Creative Manager',
       description: 'Expert in digital marketing strategies.',
-      imgUrl: teamMember,
+      imgUrl: kalkidan,
     },
     {
-      name: 'Jane Smith',
-      position: 'Marketing Head',
-      description: 'Expert in digital marketing strategies.',
-      imgUrl: teamMember,
+      name: 'Natanim Ashenafi',
+      position: 'Tech Lead',
+      description: 'Expert in software development.',
+      imgUrl: natanim,
     },
-    {
-      name: 'Jane Smith',
-      position: 'Marketing Head',
-      description: 'Expert in digital marketing strategies.',
-      imgUrl: teamMember,
-    },
-    {
-      name: 'Jane Smith',
-      position: 'Marketing Head',
-      description: 'Expert in digital marketing strategies.',
-      imgUrl: teamMember,
-    },
-    {
-      name: 'Jane Smith',
-      position: 'Marketing Head',
-      description: 'Expert in digital marketing strategies.',
-      imgUrl: teamMember,
-    },
-    {
-      name: 'Jane Smith',
-      position: 'Marketing Head',
-      description: 'Expert in digital marketing strategies.',
-      imgUrl: teamMember,
-    },
-    {
-      name: 'Jane Smith',
-      position: 'Marketing Head',
-      description: 'Expert in digital marketing strategies.',
-      imgUrl: teamMember,
-    },
+ 
   ];
 
   return (

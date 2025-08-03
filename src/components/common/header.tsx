@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import logo from '@/../public/assets/Layer 2.svg';
+import logo from '@/../public/assets/logo.png';
 import Image from 'next/image';
 import { ThemeContext } from '@/lib/ThemeContext';
 import Link from 'next/link';

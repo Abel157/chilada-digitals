@@ -24,20 +24,9 @@ const AboutUsPage = () => {
   return (
     <div style={{ backgroundColor: theme.primaryColor }} className="flex flex-col items-center pb-32">
       {/* Hero Section */}
-      <div className="container gap-x-10 mx-auto max-w-screen-xl px-6 py-14 md:py-32 flex flex-col md:flex-row items-center justify-between">
+      <div className="container gap-x-10 mx-auto max-w-screen-xl px-6 py-14 md:py-32 flex flex-col md:flex-row items-center justify-center">
         
-        {/* Left Side: YouTube Video */}
-        <div className="md:w-1/2 w-full mb-8 md:mb-0">
-          {/* <div className="aspect-w-16 aspect-h-9"> */}
-            <iframe
-              className="w-full h-96 rounded-lg shadow-lg"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ" // Replace with your own video URL
-              title="About Us Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          {/* </div> */}
-        </div>
+        
 
         {/* Right Side: Text Content */}
         <div className="lg:w-1/2 w-full text-center lg:text-left">

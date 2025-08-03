@@ -69,7 +69,7 @@ const ProjectsPage = () => {
         <iframe
           width="560"
           height="315"
-          src="https://www.youtube.com/embed/-dmwG54QsKc?si=WtNbwg_WUMCimMSy"
+          src="https://www.youtube.com/embed/8OVG1LJv9Nk"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           className="w-full h-full"
